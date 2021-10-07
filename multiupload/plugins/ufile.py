@@ -60,6 +60,7 @@ FileSize: {humanbytes(amjana.file.size)}
 			data={'file_size': amjana.file.size})
 
 		r2 = post('https://up.ufile.io/v1/upload/chunk',
+			stream=True,
 			data={'chunk_index': 1, 'fuid': r.json()["fuid"]},
 			files={'file': open(f'{result.name}','rb')}
 			)

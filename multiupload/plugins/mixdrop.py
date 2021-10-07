@@ -61,7 +61,7 @@ FileSize: {humanbytes(amjana.file.size)}
 			'key': 'crLFRApkOWtQvDzrWwtJ',
 		}
 		url = "https://ul.mixdrop.co/api"
-		r = post(url, files={'file': open(f'{result.name}','rb')}, data=data)
+		r = post(url, stream=True, files={'file': open(f'{result.name}','rb')}, data=data)
 	await anjana.action(event.chat_id, 'cancel')
 
 	hmm = f'''File Uploaded successfully !!

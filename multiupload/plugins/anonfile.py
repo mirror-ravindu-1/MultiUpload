@@ -57,7 +57,7 @@ FileSize: {humanbytes(amjana.file.size)}
 	async with anjana.action(event.chat_id, 'document'):
 		await msg.edit("Now Uploading to Anonfile")
 		url = "https://api.anonfiles.com/upload"
-		r = post(url, files={'file': open(f'{result.name}','rb')})
+		r = post(url, stream=True, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
 	hmm = f'''File Uploaded successfully !!

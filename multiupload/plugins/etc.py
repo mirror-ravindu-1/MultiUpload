@@ -63,6 +63,6 @@ async def help(event):
 
 ✦ **Powered By [Harp Tech]**(t.me/harp_tech)
 ✦ Made with ♥️ by [Anjana](t.me/anjana_ma)'''
-		await event.reply(helpmsg, buttons=[
-				Button.url('Support Chat 💭', 't.me/harp_chat')
-			], link_preview=False)
+		await event.reply(helpmsg,
+		buttons=[Button.url('Support Chat 💭', 't.me/harp_chat')],
+		link_preview=False)

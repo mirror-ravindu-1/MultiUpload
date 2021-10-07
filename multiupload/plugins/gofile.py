@@ -60,7 +60,7 @@ FileSize: {humanbytes(amjana.file.size)}
 		r = get(url)
 
 		url2 = f"https://{r.json()['data']['server']}.gofile.io/uploadFile"
-		r2 = post(url2, files={'file': open(f'{result.name}','rb')})
+		r2 = post(url2, stream=True, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
 	hmm = f'''File Uploaded successfully !!

@@ -57,7 +57,7 @@ FileSize: {humanbytes(amjana.file.size)}
 	async with anjana.action(event.chat_id, 'document'):
 		await msg.edit("Now Uploading to TmpNinja")
 		url = "https://tmp.ninja/upload.php"
-		r = post(url, files={'files[]': open(f'{result.name}','rb')})
+		r = post(url, stream=True, files={'files[]': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
 	hmm = f'''File Uploaded successfully !!
